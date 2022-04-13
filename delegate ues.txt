@@ -1,0 +1,39 @@
+   using System;
+
+namespace ConsoleApp25
+{
+    public delegate void calculation(int a, int b);
+    class Program
+    {
+        public static void add (int a,int b)
+        {
+            int r = a + b;
+            Console.WriteLine(r);
+        }
+        public static void sub (int a, int b)
+        {
+            int r = a - b;
+            Console.WriteLine(  r);
+        }
+        public static void multi(int a, int b)
+        {
+            int r = a * b;
+            Console.WriteLine(r);
+        }
+        public static void divid(int a, int b)
+        {
+            int r = a/b;
+            Console.WriteLine(r);
+        }
+        static void Main(string[] args)
+        {
+            calculation m = new calculation(add);
+            m += sub;
+            m += multi;
+            m += divid;
+            m(12, 4);
+          
+            Console.ReadLine();
+        }
+    }
+}
